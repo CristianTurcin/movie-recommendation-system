@@ -33,24 +33,50 @@ const loadKnowledgeBase = () => {
 loadKnowledgeBase();
 console.log("Baza de cunoștințe a fost încărcată!");
 
-
-const inferGenre = (userAnswers) => {
+const inferMovie = (userAnswers) => {
     const rules = knowledgeBase.rules;
+    let matchedGenre = null;
 
-    // Căutăm direct genul bazat pe combinația de răspunsuri
+    // Determinăm genul filmului pe baza răspunsurilor utilizatorului
     for (const genre in rules) {
         const conditions = rules[genre];
         if (Object.keys(conditions).every(q => userAnswers[q] === conditions[q])) {
-            return knowledgeBase.genres[genre]; // Returnează genul filmului
+            matchedGenre = knowledgeBase.genres[genre];
+            break;
         }
     }
-    return "No matching genre found.";
+
+    if (!matchedGenre) {
+        return { message: "No matching genre found.", movie: null };
+    }
+
+    // Selectăm un film care aparține genului determinat
+    const movies = knowledgeBase.movies.filter(movie =>
+        movie.genre.toLowerCase().split(', ').includes(matchedGenre.toLowerCase())
+    );
+
+    if (movies.length === 0) {
+        return { message: `No movies found for genre ${matchedGenre}.`, movie: null };
+    }
+
+    // Alegem un film randomizat din lista filmelor disponibile
+    const selectedMovie = movies[Math.floor(Math.random() * movies.length)];
+
+    return {
+        genre: matchedGenre,
+        movie: {
+            title: selectedMovie.title,
+            year: selectedMovie.year,
+            rating: selectedMovie.rating,
+            duration: selectedMovie.duration,
+            description: selectedMovie.description
+        }
+    };
 };
+
 app.post("/recommend", (req, res) => {
     const userAnswers = req.body;
-    const recommendedGenre = inferGenre(userAnswers);
+    const recommendation = inferMovie(userAnswers);
 
-    res.json({ genre: recommendedGenre });
+    res.json(recommendation);
 });
-
-
