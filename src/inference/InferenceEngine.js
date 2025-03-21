@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const filePath = path.resolve("src/rules.json");
+const filePath = path.join(process.cwd(), "src", "rules.json");
 
 let knowledgeBase;
 try {
@@ -16,7 +16,9 @@ try {
     knowledgeBase = { rules: {}, genres: {} };
 }
 
-export const inferGenre = (userAnswers) => {
+export default knowledgeBase;
+
+export const inferMovie = (userAnswers) => {
     if (!userAnswers || typeof userAnswers !== "object") {
         console.error("Invalid userAnswers provided:", userAnswers);
         return null;
@@ -47,7 +49,6 @@ export const inferGenre = (userAnswers) => {
 
     if (!bestMatch) {
         return {
-            message: "No exact genre match found. Here are some close matches:",
             suggestedGenres: Object.values(knowledgeBase.genres)
         };
     }
