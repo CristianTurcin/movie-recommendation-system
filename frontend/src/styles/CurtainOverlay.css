@@ -1,0 +1,22 @@
+/* src/styles/CurtainOverlay.css */
+
+.curtain {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('../../public/images/curtain1.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 9999;
+}
+
+.curtain-left {
+    left: 0;
+    border-right: 2px solid #000;
+}
+
+.curtain-right {
+    right: 0;
+    border-left: 2px solid #000;
+}

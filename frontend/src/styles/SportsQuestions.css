@@ -1,0 +1,35 @@
+.sports-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../public/images/sports3.jpg');
+    background-size: cover;
+    background-position: center top 50%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sports-overlay {
+    background-color: rgba(0, 0, 0, 0.0); /* Optional for readability */
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 800px;
+}
+
+.scary-content {
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    max-width: 700px;
+    margin-top: -22rem; /* 👈 Push content higher */
+}
+
+.sports-overlay h2 {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    margin-top: 8rem;
+}

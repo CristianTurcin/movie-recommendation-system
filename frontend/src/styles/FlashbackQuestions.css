@@ -1,0 +1,43 @@
+.flashback-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../public/images/flashback3.jpg'); /* adjust if your image is in /public/images */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flashback-content {
+    max-width: 700px;
+    color: white;
+    text-align: left;
+    margin-bottom: 10rem;  /* push down a little */
+    margin-right: 14rem; /* push right a little */
+}
+
+.flashback-content h1 {
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    margin-bottom: 2rem;
+}
+
+.flashback-buttons button {
+    margin: 0 1rem 0 0;
+    padding: 12px 24px;
+    font-size: 1rem;
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.flashback-buttons button:hover {
+    background-color: #d32f2f;
+}

@@ -1,0 +1,129 @@
+.mood-selection {
+    overflow: hidden;
+    position: relative;
+    width: 94.9vw;
+    height: 89.2vh; /* Force full screen height without scroll */
+    background-image: url('../../public/images/firstpage2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+
+/* FILTER STYLES */
+.filters {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: rgba(255, 255, 255, 0.0); /* slightly transparent */
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    min-width: 250px;
+    height: auto;
+}
+
+
+.filters label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #ffffff; /* Changed from #333 to white */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.9); /* 👈 adds glow/shadow for readability */
+}
+
+
+.filters select {
+    margin-top: 6px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: white;
+    transition: all 0.2s ease;
+}
+
+.filters select:hover {
+    border-color: #007bff;
+    background-color: #f0f8ff;
+}
+
+.filters select:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* MOOD BUTTONS */
+.mood-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    background-color: transparent; /* Removes blackish rectangle */
+    padding: 1rem;
+    border-radius: 12px;
+    max-width: 300px;
+}
+
+.mood-buttons h2 {
+    margin-bottom: 1rem;
+    color: #FFD700; /* 🍊 soft warm gold */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.85);
+}
+
+
+.mood-buttons button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.mood-buttons button:hover {
+    background-color: #0056b3;
+}
+
+
+/* 🎭 Theatre Curtain Split Effect */
+.curtain {
+    position: fixed;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('../../public/images/curtain1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+.curtain-left {
+    left: 0;
+    border-right: 1px solid #330000;
+}
+
+.curtain-right {
+    right: 0;
+    border-left: 1px solid #330000;
+}
